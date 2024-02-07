@@ -1,0 +1,134 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+main {
+    padding: 20px;
+}
+
+.footer {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.links a {
+    text-decoration: none;
+    color: #007aff;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #0056b3;
+}
+
+.divider {
+    margin: 0 10px;
+}
+
+.wrapper.post {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.postTitle {
+    color: #333;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.controls p {
+    margin: 10px 0;
+}
+
+.controls strong {
+    color: #333;
+}
+
+.previous,
+.next {
+    color: #007aff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.previous:hover,
+.next:hover {
+    color: #0056b3;
+}
+
+.wrapper.home {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content ul li {
+    margin-bottom: 10px;
+}
+
+.content ul li a {
+    color: #007aff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.content ul li a:hover {
+    color: #0056b3;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navigation ul li {
+    margin-right: 20px;
+}
+
+.navigation ul li:last-child {
+    margin-right: 0;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #007aff;
+    transition: color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    color: #0056b3;
+}

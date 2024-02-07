@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="{{ description }}"/>
+        <link rel="icon" href="/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="/public/style.css"/>
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">Your Logo</div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/posts">Posts</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {{ content | safe }}
+
+            <footer class="footer">
+                <div class="links">
+                    <a href="/">Home</a>
+                    <span class="divider">|</span>
+                    <a href="/posts">Posts</a>
+                    <span class="divider">|</span>
+                    <a href="/about">About</a>
+                </div>
+            </footer>
+        </main>
+    </body>
+
+</html>
