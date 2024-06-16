@@ -1,18 +1,13 @@
 ---
-title: Cincão
-layout: layouts/base.njk
+title: Gladis Precog
+layout: layouts/post.njk
+date: 2024-01-01
 tags:
   - posts
 ---
 
-# Cincão pra você
+This is the real time Margulis predictor for a precog application:
 
-My name is godines, I speak finarfin.
-
-```python
-
-def real_time_precog(x):
-  """Apply the Margulis predictor"""
-  pass
-
-```
+$$
+  f(x) = \int f(x) exp(ikx)
+$$

@@ -1,6 +1,9 @@
 ---
-title: Cincão
+title: Home
 layout: layouts/base.njk
+logo: Random Agent
 ---
 
-This is my fucking blog. Welcome.
+Welcome to my Random Agent, me personal website!
+
+Here you can find my [blog](/posts/), my [resume](/resume/) and my [academic publications](/publications/).

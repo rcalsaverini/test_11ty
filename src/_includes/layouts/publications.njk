@@ -1,0 +1,71 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-home
+---
+
+{# This is the template for the Posts page–it lists the posts in the collection #}
+
+<div class="container flex px-4 mx-auto mt-3 space-y-2">
+  <ul>
+    {% for publication in collections.publications %}
+    <li>
+
+      <h1 class="text-lg text-indigo-600 font-bold text-left">
+        <a href="{{ publication.url | url }}">
+          <h3>{{ publication.data.title }}</h3>
+        </a>
+      </h1>
+
+      {% if publication.data.pubtype === "thesis" %}
+      <div class="text-sm text-justify text-gray-700">
+        <span><b class="text-bold text-gray-900">Thesis:</b> {{ publication.data.degree }} presented in {{
+          publication.date | postDate }} </span><br />
+        <span><b class="text-bold text-gray-900">Author:</b> {{ publication.data.author }}</span><br />
+        <span><b class="text-bold text-gray-900">Commitee:</b>
+          {% for member in publication.data.commitee %}
+          {{ member }}{% if not loop.last %}; {% endif %}
+          {% endfor %}
+        </span><br />
+        <span><b class="text-bold text-gray-900">Institution:</b> {{ publication.data.school }}</span><br />
+        <a class="text-bold text-gray-900 hover:bg-gray-300" href="{{ publication.data.link }}"><b>External link:</b> {{
+          publication.data.link }}</a>
+      </div>
+
+      {% elif publication.data.pubtype === "paper" %}
+      <div class="text-sm text-justify text-gray-700">
+        <span><b class="text-bold text-gray-900"> Published at:</b> {{ publication.data.journal }} <b>{{
+            publication.data.volume }}</b>, {{publication.data.pages}} ({{publication.data.year}}) </span><br />
+        <b class="text-bold text-gray-900">Authors:</b> {{ publication.data.authors }}<br />
+        {% for author in publication.data.authors %}
+        {{ author }}{% if not loop.last %}; {% endif %}
+        {% endfor %}<br />
+        <a class="text-bold text-gray-900 hover:bg-gray-300" href="{{ publication.data.link }}"><b>External link:</b> {{
+          publication.data.link }}</a><br />
+        <a class="text-bold text-gray-900 hover:bg-gray-300"
+          href="https://doi.org/{{ publication.data.doi }}"><b>External link:</b> {{
+          publication.data.doi }}</a><br />
+      </div>
+
+      {% elif publication.data.pubtype === "preprint" %}
+      <div class="text-sm text-justify text-gray-700">
+        <span><b class="text-bold text-gray-900"> Preprint:</b> {{ publication.data.preprint }}:{{ publication.data.id
+          }} </span><br />
+        <b class="text-bold text-gray-900">Authors:</b>
+        {% for author in publication.data.authors %}
+        {{ author }}{% if not loop.last %}; {% endif %}
+        {% endfor %}
+
+        <br />
+        <a class="text-bold text-gray-900 hover:bg-gray-300" href="{{ publication.data.link }}"><b>External link:</b> {{
+          publication.data.link }}</a>
+      </div>
+
+      {% endif %}
+      <div class="text-xs text-justify px-4 mx-auto">
+        <p>Abstract:</p>
+        {{publication.data.description}}
+      </div>
+
+    </li>
+    {% endfor %}
+</div>

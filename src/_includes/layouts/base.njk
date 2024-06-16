@@ -1,36 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="description" content="{{ description }}"/>
-        <link rel="icon" href="/favicon.ico"/>
-        <link rel="stylesheet" type="text/css" href="/public/style.css"/>
-    </head>
-    <body>
-        <header class="header">
-            <div class="logo">Your Logo</div>
-            <nav class="navigation">
-                <ul>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ description }}" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/public/base.css" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
+        integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"
+        integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"
+        integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false },
+                    { left: "\\(", right: "\\)", display: false },
+                    { left: "\\[", right: "\\]", display: true },
+                ],
+                // • rendering keys, e.g.:
+                throwOnError: false,
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="navbar bg-base-100">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </div>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     <li><a href="/">Home</a></li>
                     <li><a href="/posts">Posts</a></li>
-                    <li><a href="/about">About</a></li>
+                    <li><a href="/resume">Resume</a></li>
+                    <li><a href="/publications">Publications</a></li>
                 </ul>
-            </nav>
-        </header>
-        <main>
-            {{ content | safe }}
-
-            <footer class="footer">
-                <div class="links">
-                    <a href="/">Home</a>
-                    <span class="divider">|</span>
-                    <a href="/posts">Posts</a>
-                    <span class="divider">|</span>
-                    <a href="/about">About</a>
-                </div>
-            </footer>
-        </main>
-    </body>
+            </div>
+            <a class="btn btn-ghost text-xl text-pink-900"> Random Agent </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="/">Home</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/resume">Resume</a></li>
+                <li><a href="/publications">Publications</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+        </div>
+    </div>
+    <main class="w-3/4 mx-auto">
+        {{ content | safe }}
+    </main>
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+        <nav class="grid grid-flow-col gap-4">
+            <a class="link link-hover" href="/">Home</a>
+            <a class="link link-hover" href="/posts">Posts</a>
+            <a class="link link-hover" href="/resume">Resume</a>
+            <a class="link link-hover" href="/publications">Publications</a>
+        </nav>
+        <aside>
+            <p> <span class="text-indigo-600">Random Agent</span> is a personal webpage by <span
+                    class="text-indigo-600">Rafael S. Calsaverini</span>.
+                All text published here is released under the <a
+                    href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a> license.</p>
+        </aside>
+    </footer>
+</body>
 
 </html>
